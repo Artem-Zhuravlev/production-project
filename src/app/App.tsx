@@ -1,11 +1,10 @@
 
 import { Routes, Route, Link } from 'react-router-dom';
 import './styles/index.scss';
-import AboutPage from './pages/AboutPage/AboutPage';
-import MainPage from './pages/MainPage/MainPage';
-import { useTheme } from './theme/useTheme';
-import { classNames } from './helpers/classNames/ClassNames';
-
+import AboutPage from 'pages/AboutPage/AboutPage';
+import MainPage from 'pages/MainPage/MainPage';
+import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
+import { classNames } from 'shared/config/lib/classNames/ClassNames';
 
 
 const App = () => {
