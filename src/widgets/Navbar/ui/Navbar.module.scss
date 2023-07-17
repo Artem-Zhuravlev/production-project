@@ -1,5 +1,6 @@
 .Navbar {
   background-color: var(--inverted-bg-color);
+  min-height: var(--navbar-height);
   
   ul {
     display: flex;
