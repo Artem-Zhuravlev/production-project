@@ -1,5 +1,6 @@
 {
   "translation": "Перевод i18n",
   "translation_btn": "Кнопка перевода",
-  "language": "Русский"
+  "language": "Русский",
+  "not_found": "Страница не найдена"
 }
