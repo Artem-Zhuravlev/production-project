@@ -7,5 +7,5 @@ export const AboutPage = () => {
     <div>
       { t('about_us') }
     </div>
-  )
-}
+  );
+};

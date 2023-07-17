@@ -7,5 +7,5 @@ export const MainPage = () => {
     <div>
       { t('home_page') }
     </div>
-  )
-}
+  );
+};
