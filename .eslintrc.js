@@ -41,7 +41,8 @@ module.exports = {
     'comma-dangle': 'off',
     'arrow-body-style': 'off',
     'linebreak-style': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }]
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'max-len': ['error', { ignoreComments: true, code: 100 }]
   },
   globals: {
     __IS_DEV__: true,
