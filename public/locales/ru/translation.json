@@ -2,5 +2,7 @@
   "translation": "Перевод i18n",
   "translation_btn": "Кнопка перевода",
   "language": "Русский",
-  "not_found": "Страница не найдена"
+  "not_found": "Страница не найдена",
+  "error_message": "Что то пошло не так",
+  "reload_page": "Перезагрузить страницу"
 }

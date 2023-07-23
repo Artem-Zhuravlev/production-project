@@ -2,5 +2,7 @@
   "translation": "Translation i18n",
   "translation_btn": "Translation button",
   "language": "English",
-  "not_found": "Not found page"
+  "not_found": "Not found page",
+  "error_message": "Something went wrong",
+  "reload_page": "Reload Page"
 }
