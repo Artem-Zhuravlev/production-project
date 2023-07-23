@@ -4,5 +4,6 @@
   "language": "English",
   "not_found": "Not found page",
   "error_message": "Something went wrong",
-  "reload_page": "Reload Page"
+  "reload_page": "Reload Page",
+  "toggle": "Toggle"
 }
