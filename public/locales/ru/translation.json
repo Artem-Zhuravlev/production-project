@@ -2,8 +2,11 @@
   "translation": "Перевод i18n",
   "translation_btn": "Кнопка перевода",
   "language": "Русский",
+  "short_language": "Ру",
   "not_found": "Страница не найдена",
   "error_message": "Что то пошло не так",
   "reload_page": "Перезагрузить страницу",
-  "toggle": "Переключить"
+  "toggle": "Переключить",
+  "home": "Главная",
+  "about": "О нас"
 }
