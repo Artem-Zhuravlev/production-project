@@ -21,6 +21,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'i18next',
+    'react-hooks'
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -52,6 +53,8 @@ module.exports = {
       },
     ],
     'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error'
   },
   globals: {
     __IS_DEV__: true,
