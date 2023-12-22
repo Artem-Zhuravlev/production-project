@@ -10,6 +10,8 @@
   "home": "Home",
   "about": "About us",
   "enter": "Enter",
+  "exit": "Exit",
   "username": "Username",
-  "password": "Password"
+  "password": "Password",
+  "auth_form": "Authorization form"
 }

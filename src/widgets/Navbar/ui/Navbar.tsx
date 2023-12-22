@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { LoginModal } from 'features/AuthByUsername';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { useSelector, useDispatch } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -14,6 +16,8 @@ interface NavbarProps {
 const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
+  const authData = useSelector(getUserAuthData);
+  const dispatch = useDispatch();
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -22,6 +26,34 @@ const Navbar = ({ className }: NavbarProps) => {
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
   }, []);
+
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout());
+  }, [dispatch]);
+
+  const renderButton = () => {
+    if (authData) {
+      return (
+        <Button
+          theme={ThemeButton.CLEAR_INVERTED}
+          className={cls.links}
+          onClick={onLogout}
+        >
+          { t('exit') }
+        </Button>
+      );
+    }
+
+    return (
+      <Button
+        theme={ThemeButton.CLEAR_INVERTED}
+        className={cls.links}
+        onClick={onShowModal}
+      >
+        { t('enter') }
+      </Button>
+    );
+  };
 
   return (
     <nav className={classNames(cls.Navbar, {}, [className])}>
@@ -35,13 +67,7 @@ const Navbar = ({ className }: NavbarProps) => {
         <li
           className={cls['ml-auto']}
         >
-          <Button
-            theme={ThemeButton.CLEAR_INVERTED}
-            className={cls.links}
-            onClick={onShowModal}
-          >
-            { t('enter') }
-          </Button>
+          {renderButton()}
         </li>
       </ul>
       <LoginModal
