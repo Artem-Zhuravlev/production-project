@@ -1,13 +1,14 @@
 .item {
-  margin-top: 10px;
-  margin-left: 30px;
   display: flex;
   align-items: center;
+  min-height: 25px;
 }
 
 .link {
+  display: inline-flex;
   margin-left: 10px;
   opacity: 1;
+  line-height: 1;
 }
 
 .icon {
@@ -16,8 +17,11 @@
 
 .collapsed {
   .link {
+    margin: 0;
     opacity: 0;
     transition: 0.2s opacity;
     width: 0;
+    height: 0;
+    
   }
 }
