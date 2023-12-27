@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Artem",
+    "lastname": "Zhuravlev",
+    "age": 33,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Kharkiv",
+    "username": "admin",
+    "avatar": "https://avatars.githubusercontent.com/u/24191610?v=4"
+  }
 }
