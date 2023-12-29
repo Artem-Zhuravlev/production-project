@@ -45,6 +45,7 @@ module.exports = {
     'comma-dangle': 'off',
     'arrow-body-style': 'off',
     'linebreak-style': 'off',
+    'no-undef': 'off',
     'i18next/no-literal-string': [
       'error',
       {
