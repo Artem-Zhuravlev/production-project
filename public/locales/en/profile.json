@@ -2,5 +2,12 @@
   "profile": "Profile",
   "edit": "Edit",
   "your_name": "Your name",
-  "your_lastname": "Your lastname"
+  "your_lastname": "Your lastname",
+  "your_age": "Your age",
+  "your_username": "Your username",
+  "your_avatar": "Your avatar",
+  "city": "Your city",
+  "profile_error": "Profile error",
+  "cancel": "Cancel",
+  "save": "Save"
 }

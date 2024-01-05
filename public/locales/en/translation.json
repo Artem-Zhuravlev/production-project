@@ -14,5 +14,7 @@
   "exit": "Exit",
   "username": "Username",
   "password": "Password",
-  "auth_form": "Authorization form"
+  "auth_form": "Authorization form",
+  "choose_currency": "Choose currency",
+  "choose_country": "Choose country"
 }
