@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { AxiosInstance } from 'axios';
 import { User, userActions } from 'entities/User';
-import { ThunkExtraArg } from 'app/providers/StoreProvider/config/StateSchema';
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { ThunkConfig } from 'app/providers/StoreProvider';
 
 interface LoginByUsernameProps {
   username: string;
@@ -11,29 +12,25 @@ interface LoginByUsernameProps {
 export const loginByUsername = createAsyncThunk<
   User,
   LoginByUsernameProps,
-  { rejectValue: string, extra: ThunkExtraArg }
+  ThunkConfig<string>
 >(
   'login/loginByUsername',
-  async ({ username, password }:LoginByUsernameProps, thunkApi) => {
+  async (authData, thunkApi) => {
     const { extra, dispatch, rejectWithValue } = thunkApi;
 
     try {
-      const { data } = await extra.api.post<User>('/login', {
-        username,
-        password
-      });
+      const response = await extra.api.post<User>('/login', authData);
 
-      if (!data) {
+      if (!response.data) {
         throw new Error();
       }
 
-      localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(data));
-      dispatch(userActions.setAuthData(data));
-
-      return data;
+      localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
+      dispatch(userActions.setAuthData(response.data));
+      return response.data;
     } catch (e) {
       console.log(e);
-      return rejectWithValue('Email or Password is not correct');
+      return rejectWithValue('error');
     }
-  }
+  },
 );

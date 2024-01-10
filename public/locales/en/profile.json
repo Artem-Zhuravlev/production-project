@@ -9,5 +9,10 @@
   "city": "Your city",
   "profile_error": "Profile error",
   "cancel": "Cancel",
-  "save": "Save"
+  "save": "Save",
+  "server_error": "Server error",
+  "incorrect_country": "Incorrect country",
+  "no_data": "No data",
+  "incorrect_user_data": "Incorrect user data",
+  "incorrect_age": "Incorrect age"
 }

@@ -12,11 +12,11 @@ import cls from './ProfileCard.module.scss';
 interface ProfileCardProps {
   className?: string;
   data?: Profile;
-  isLoading?: boolean;
   error?: string;
+  isLoading?: boolean;
   readonly?: boolean;
-  onChangeFirstname?: (value?: string) => void;
   onChangeLastname?: (value?: string) => void;
+  onChangeFirstname?: (value?: string) => void;
   onChangeCity?: (value?: string) => void;
   onChangeAge?: (value?: string) => void;
   onChangeUsername?: (value?: string) => void;
@@ -38,8 +38,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onChangeCity,
     onChangeAvatar,
     onChangeUsername,
+    onChangeCountry,
     onChangeCurrency,
-    onChangeCountry
   } = props;
   const { t } = useTranslation('profile');
 
@@ -64,18 +64,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
   }
 
   const mods: Mods = {
-    [cls.editing]: !readonly
+    [cls.editing]: !readonly,
   };
 
   return (
     <div className={classNames(cls.ProfileCard, mods, [className])}>
-      <div
-        className={cls.data}
-      >
+      <div className={cls.data}>
         {data?.avatar && (
-          <div
-            className={cls.avatarWrapper}
-          >
+          <div className={cls.avatarWrapper}>
             <Avatar src={data?.avatar} />
           </div>
         )}
