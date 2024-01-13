@@ -17,5 +17,6 @@
   "password": "Пароль",
   "auth_form": "Форма авторизации",
   "choose_currency": "Укажите валюту",
-  "choose_country": "Укажите страну"
+  "choose_country": "Укажите страну",
+  "no_comments": "Комментарии отсутствуют"
 }

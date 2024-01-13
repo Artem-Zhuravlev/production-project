@@ -1,4 +1,5 @@
 {
   "article_not_found": "Article is no defined",
-  "loading_error": "Article was not loaded"
+  "loading_error": "Article was not loaded",
+  "comments": "Comments"
 }
