@@ -18,5 +18,7 @@
   "auth_form": "Authorization form",
   "choose_currency": "Choose currency",
   "choose_country": "Choose country",
-  "no_comments": "No comments"
+  "no_comments": "No comments",
+  "add_comment": "Add comment",
+  "send": "Send"
 }
