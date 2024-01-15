@@ -1,5 +1,6 @@
 {
   "article_not_found": "Article is no defined",
   "loading_error": "Article was not loaded",
-  "comments": "Comments"
+  "comments": "Comments",
+  "back_to_list": "Back to list"
 }
