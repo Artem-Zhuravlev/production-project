@@ -8,14 +8,15 @@ import {
 import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema';
 import { AddCommentFormSchema } from 'features/addCommentForm';
+import { UISchema } from 'features/UI/model/types/UISchema';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  ui: UISchema
 
   loginForm?: LoginSchema;
   profile?: ProfileSchema;

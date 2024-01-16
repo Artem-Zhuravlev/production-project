@@ -6,7 +6,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoade
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlePageSlice';
 import cls from './ArticlesPage.module.scss';
