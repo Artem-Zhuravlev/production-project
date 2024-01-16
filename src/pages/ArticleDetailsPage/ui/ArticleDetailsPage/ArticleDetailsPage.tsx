@@ -11,6 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
@@ -47,11 +48,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div
+      <Page
         className={classNames(cls.ArticleDetailsPage, {}, [className])}
       >
         {t('article_not_found')}
-      </div>
+      </Page>
     );
   }
 
@@ -59,7 +60,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     <DynamicModuleLoader
       reducers={reducers}
     >
-      <div
+      <Page
         className={classNames(cls.ArticleDetailsPage, {}, [className])}
       >
         <Button theme={ThemeButton.OUTLINE} onClick={onBackToLIst}>
@@ -74,7 +75,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
           isLoading={commentsIsLoading}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
