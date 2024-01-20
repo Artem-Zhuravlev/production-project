@@ -25,15 +25,12 @@ export const initArticlesPage = createAsyncThunk<
         if (orderFromUrl) {
           dispatch(articlesPageActions.setOrder(orderFromUrl));
         }
-
         if (sortFromUrl) {
           dispatch(articlesPageActions.setSort(sortFromUrl));
         }
-
         if (searchFromUrl) {
           dispatch(articlesPageActions.setSearch(searchFromUrl));
         }
-
         if (typeFromUrl) {
           dispatch(articlesPageActions.setType(typeFromUrl));
         }
