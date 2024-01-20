@@ -3,5 +3,8 @@
   "loading_error": "Статья не была загружена",
   "comments": "Комментарии",
   "back_to_list": "Назад к списку",
-  "recommendations": "Рекомендации"
+  "recommendations": "Рекомендации",
+  "edit": "Редактировать",
+  "edit_article": "Редактировать статью",
+  "create_article": "Создать статью"
 }

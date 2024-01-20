@@ -3,5 +3,8 @@
   "loading_error": "Article was not loaded",
   "comments": "Comments",
   "back_to_list": "Back to list",
-  "recommendations": "Recommendations"
+  "recommendations": "Recommendations",
+  "edit": "Edit",
+  "edit_article": "Edit article",
+  "create_article": "Create article"
 }

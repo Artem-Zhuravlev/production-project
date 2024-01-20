@@ -7,6 +7,7 @@ import { LoginModal } from 'features/AuthByUsername';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -59,10 +60,25 @@ const Navbar = ({ className }: NavbarProps) => {
     <nav className={classNames(cls.Navbar, {}, [className])}>
       <ul>
         <li>
+          <Text
+            className={cls.appName}
+            title={t('Jesm')}
+            theme={TextTheme.ERROR}
+          />
+        </li>
+        <li>
           <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>{ t('home') }</AppLink>
         </li>
         <li>
           <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>{ t('about') }</AppLink>
+        </li>
+        <li>
+          <AppLink
+            theme={AppLinkTheme.SECONDARY}
+            to={RoutePath.article_create}
+          >
+            { t('create_article') }
+          </AppLink>
         </li>
         <li
           className={cls['ml-auto']}
