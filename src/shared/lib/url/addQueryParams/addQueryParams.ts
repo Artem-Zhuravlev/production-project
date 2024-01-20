@@ -6,7 +6,7 @@ export function getQueryParams(params: OptionalRecord<string, string>) {
     }
   });
 
-  return `${searchParams.toString()}`;
+  return `?${searchParams.toString()}`;
 }
 
 export function addQueryParams(params: OptionalRecord<string, string>) {
