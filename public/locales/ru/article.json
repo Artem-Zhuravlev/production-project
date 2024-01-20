@@ -2,5 +2,6 @@
   "article_not_found": "Статья не найдена",
   "loading_error": "Статья не была загружена",
   "comments": "Комментарии",
-  "back_to_list": "Назад к списку"
+  "back_to_list": "Назад к списку",
+  "recommendations": "Рекомендации"
 }

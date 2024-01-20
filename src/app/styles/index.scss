@@ -35,3 +35,18 @@ html, body {
 .ml-auto {
   margin-left: auto;
 }
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border: 3px solid var(--card-bg);
+}
