@@ -5,7 +5,7 @@ import {
   MountedReducers,
   ReducerManager,
   StateSchema,
-  StateSchemaKey
+  StateSchemaKey,
 } from './StateSchema';
 
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {

@@ -8,11 +8,11 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import {
   addCommentFormActions,
-  addCommentFormReducer
+  addCommentFormReducer,
 } from '../../model/slices/addCommentFormSlice';
 import {
   getAddCommentFormError,
-  getAddCommentFormText
+  getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
 import { sendComment } from '../../model/services/sendComment/sendComment';
 import cls from './AddCommentForm.module.scss';
@@ -23,7 +23,7 @@ interface AddCommentFormProps {
 }
 
 const reducers: ReducersList = {
-  addCommentForm: addCommentFormReducer
+  addCommentForm: addCommentFormReducer,
 };
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {

@@ -16,7 +16,7 @@ export function buildBabelLoader({ isDev }: BuildOptions) {
               keyAsDefaultValue: true,
             },
           ],
-          isDev && require.resolve('react-refresh/babel')
+          isDev && require.resolve('react-refresh/babel'),
         ].filter(Boolean),
       },
     },

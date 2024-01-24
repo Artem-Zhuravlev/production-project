@@ -17,7 +17,7 @@ export const sendComment = createAsyncThunk<
         extra,
         dispatch,
         rejectWithValue,
-        getState
+        getState,
       } = thunkApi;
 
       const userData = getUserAuthData(getState());
@@ -32,7 +32,7 @@ export const sendComment = createAsyncThunk<
         const response = await extra.api.post<Comment>('/comments', {
           articleId: article.id,
           userId: userData.id,
-          text
+          text,
         });
 
         if (!response.data) {

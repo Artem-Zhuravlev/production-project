@@ -3,5 +3,5 @@ import { CountrySelect } from './ui/CountrySelect/CountrySelect';
 
 export {
   Country,
-  CountrySelect
+  CountrySelect,
 };

@@ -30,17 +30,17 @@ export const getSidebarItems = createSelector(
           path: `${RoutePath.profile}${userData.id}`,
           Icon: ProfileIcon,
           text: 'profile',
-          authOnly: true
+          authOnly: true,
         },
         {
           path: RoutePath.articles,
           Icon: ArticleIcon,
           text: 'articles',
-          authOnly: true
+          authOnly: true,
         },
       );
     }
 
     return sidebarItemsList;
-  }
+  },
 );

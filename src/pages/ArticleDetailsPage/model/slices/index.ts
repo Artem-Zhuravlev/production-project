@@ -5,5 +5,5 @@ import { ArticleDetailsPageSchema } from '../types/index';
 
 export const articleDetailsPageReducer = combineReducers<ArticleDetailsPageSchema>({
   recommendations: articleDetailsRecommendationsReducer,
-  comments: articleDetailsCommentsReducer
+  comments: articleDetailsCommentsReducer,
 });

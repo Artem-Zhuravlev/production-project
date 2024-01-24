@@ -12,7 +12,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { UISchema } from 'features/UI/model/types/UISchema';
 import {
-  ArticleDetailsPageSchema
+  ArticleDetailsPageSchema,
 } from 'pages/ArticleDetailsPage';
 
 export interface StateSchema {

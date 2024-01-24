@@ -5,7 +5,7 @@ import {
   ArticleSortField,
   ArticleSortSelector,
   ArticleView,
-  ArticleViewSelector
+  ArticleViewSelector,
 } from 'entities/Article';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -21,7 +21,7 @@ import {
   getArticlesPageSort,
   getArticlesPageOrder,
   getArticlesPageSearch,
-  getArticlesPageType
+  getArticlesPageType,
 } from '../../model/selectors/articlesPageSelectors';
 import { articlesPageActions } from '../../model/slices/articlePageSlice';
 import cls from './ArticlesPageFilter.module.scss';

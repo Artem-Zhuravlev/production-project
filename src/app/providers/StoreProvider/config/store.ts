@@ -15,7 +15,7 @@ export function createReduxStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
-    ui: uiReducer
+    ui: uiReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);

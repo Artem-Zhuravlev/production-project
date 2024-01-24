@@ -24,7 +24,7 @@ export const Select = memo((props: SelectProps) => {
     options,
     value,
     onChange,
-    readonly
+    readonly,
   } = props;
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {

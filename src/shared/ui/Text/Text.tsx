@@ -33,7 +33,7 @@ export const Text = (props: TextProps) => {
     title,
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
-    size = TextSize.M
+    size = TextSize.M,
   } = props;
 
   const mods: Mods = {

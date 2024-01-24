@@ -2,9 +2,9 @@ import { SortOrder } from 'shared/types/index';
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleView } from 'entities/Article';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
+import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -30,7 +30,7 @@ const articlesPageSlice = createSlice({
     sort: ArticleSortField.CREATED,
     search: '',
     order: 'asc',
-    type: ArticleType.ALL
+    type: ArticleType.ALL,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {

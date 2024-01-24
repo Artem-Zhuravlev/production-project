@@ -1,7 +1,7 @@
 export {
   Profile,
   ProfileSchema,
-  ValidateProfileError
+  ValidateProfileError,
 } from './model/types/profile';
 
 export {
@@ -10,15 +10,15 @@ export {
 } from './model/slice/profileSlice';
 
 export {
-  fetchProfileData
+  fetchProfileData,
 } from './model/services/fetchProfileData/fetchProfileData';
 
 export {
-  updateProfileData
+  updateProfileData,
 } from './model/services/updateProfileData/updateProfileData';
 
 export {
-  ProfileCard
+  ProfileCard,
 } from './ui/ProfileCard/ProfileCard';
 
 export { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';

@@ -8,7 +8,7 @@ import {
   getProfileReadonly,
   getProfileForm,
   getProfileValidateErrors,
-  ValidateProfileError
+  ValidateProfileError,
 } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';

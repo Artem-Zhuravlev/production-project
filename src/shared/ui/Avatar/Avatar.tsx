@@ -14,7 +14,7 @@ export const Avatar = (props: AvatarProps) => {
     className,
     src,
     size,
-    alt
+    alt,
   } = props;
 
   const mods: Mods = {

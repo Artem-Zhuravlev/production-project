@@ -12,7 +12,7 @@ export const addCommentFormSlice = createSlice({
   reducers: {
     setText: (state, action: PayloadAction<string>) => {
       state.text = action.payload;
-    }
+    },
   },
   // extraReducers: (builder) => {
   //   builder
