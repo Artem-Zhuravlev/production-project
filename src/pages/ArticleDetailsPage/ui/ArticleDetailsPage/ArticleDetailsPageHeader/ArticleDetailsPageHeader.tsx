@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { HStack } from 'shared/ui/Stack';
 import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from 'entities/Article';
 import { canEditArticle } from '../../../model/selectors/article';
-import cls from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string
@@ -30,7 +30,11 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   }, [article?.id, navigate]);
 
   return (
-    <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+    <HStack
+      gap="8"
+      justify="between"
+      className={classNames('', {}, [className])}
+    >
       <Button theme={ThemeButton.OUTLINE} onClick={onBackToLIst}>
         {t('back_to_list')}
       </Button>
@@ -42,6 +46,6 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
           {t('edit')}
         </Button>
       )}
-    </div>
+    </HStack>
   );
 });
