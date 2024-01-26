@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { LoginModal } from 'features/AuthByUsername';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
@@ -35,13 +37,21 @@ const Navbar = ({ className }: NavbarProps) => {
   const renderButton = () => {
     if (authData) {
       return (
-        <Button
-          theme={ThemeButton.CLEAR_INVERTED}
-          className={cls.links}
-          onClick={onLogout}
-        >
-          { t('exit') }
-        </Button>
+        <Dropdown
+          direction="bottom left"
+          className={cls.dropdown}
+          items={[
+            {
+              content: t('profile'),
+              href: RoutePath.profile + authData?.id,
+            },
+            {
+              content: t('exit'),
+              onClick: onLogout,
+            },
+          ]}
+          trigger={<Avatar size={30} src={authData?.avatar} />}
+        />
       );
     }
 
@@ -80,6 +90,7 @@ const Navbar = ({ className }: NavbarProps) => {
             { t('create_article') }
           </AppLink>
         </li>
+       
         <li
           className={cls['ml-auto']}
         >
