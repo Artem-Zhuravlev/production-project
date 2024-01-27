@@ -1,14 +1,16 @@
 import { classNames, Mods } from 'shared/lib/classNames/ClassNames';
 import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { CountrySelect, Country } from 'entities/Country';
-import { CurrencySelect, Currency } from 'entities/Currency';
-import { Input } from 'shared/ui/Input/ui/Input';
+import { Input } from 'shared/ui/Input//ui/Input';
 import { Loader } from 'shared/ui/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Currency } from 'entities/Currency/model/types/currency';
+import { CurrencySelect } from 'entities/Currency';
+import { Country } from 'entities/Country/model/types/country';
+import { CountrySelect } from 'entities/Country';
 import { HStack, VStack } from 'shared/ui/Stack';
-import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
   className?: string;
@@ -58,13 +60,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (error) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack justify="center" className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <Text
           theme={TextTheme.ERROR}
           title={t('profile_error')}
           align={TextAlign.CENTER}
         />
-      </div>
+      </HStack>
     );
   }
 
@@ -75,9 +77,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
   return (
     <VStack gap="16" className={classNames(cls.ProfileCard, mods, [className])}>
       {data?.avatar && (
-        <div className={cls.avatarWrapper}>
+        <HStack justify="center" className={cls.avatarWrapper}>
           <Avatar src={data?.avatar} />
-        </div>
+        </HStack>
       )}
       <Input
         value={data?.first}

@@ -23,7 +23,7 @@ import {
   getArticlesPageSearch,
   getArticlesPageType,
 } from '../../model/selectors/articlesPageSelectors';
-import { articlesPageActions } from '../../model/slices/articlePageSlice';
+import { articlesPageActions } from '../../model/slice/articlePageSlice';
 import cls from './ArticlesPageFilter.module.scss';
 
 interface ArticlesPageFilterProps {

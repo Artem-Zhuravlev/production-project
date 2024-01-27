@@ -14,5 +14,6 @@
   "incorrect_country": "Incorrect country",
   "no_data": "No data",
   "incorrect_user_data": "Incorrect user data",
-  "incorrect_age": "Incorrect age"
+  "incorrect_age": "Incorrect age",
+  "profile_not_found": "Profile not found"
 }

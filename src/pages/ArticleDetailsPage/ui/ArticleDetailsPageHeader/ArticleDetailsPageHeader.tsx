@@ -8,7 +8,7 @@ import { HStack } from 'shared/ui/Stack';
 import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from 'entities/Article';
-import { canEditArticle } from '../../../model/selectors/article';
+import { canEditArticle } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string

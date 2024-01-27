@@ -9,7 +9,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoade
 import {
   addCommentFormActions,
   addCommentFormReducer,
-} from '../../model/slices/addCommentFormSlice';
+} from '../../model/slice/addCommentFormSlice';
 import {
   getAddCommentFormError,
   getAddCommentFormText,

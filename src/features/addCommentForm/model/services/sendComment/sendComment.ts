@@ -4,7 +4,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
 import { getArticleDetailsData } from 'entities/Article/model/selectors/articleDetails';
 import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors';
-import { addCommentFormActions } from '../../slices/addCommentFormSlice';
+import { addCommentFormActions } from '../../slice/addCommentFormSlice';
 
 export const sendComment = createAsyncThunk<
   Comment,
