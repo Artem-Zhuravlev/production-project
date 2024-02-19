@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, Suspense } from 'react';
 import { classNames } from 'shared/lib/classNames/ClassNames';
 import { useTranslation } from 'react-i18next';
 import { AddCommentForm } from 'features/addCommentForm';
@@ -10,10 +10,11 @@ import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlic
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { Loader } from 'shared/ui/Loader';
 
 interface ArticleDetailsCommentsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -37,9 +38,11 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         size={TextSize.L}
         title={t('comments')}
       />
-      <AddCommentForm
-        onSendComment={onSendComment}
-      />
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm
+          onSendComment={onSendComment}
+        />
+      </Suspense>
       <CommentList
         isLoading={commentsIsLoading}
         comments={comments}
