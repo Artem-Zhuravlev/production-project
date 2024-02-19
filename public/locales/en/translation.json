@@ -35,5 +35,7 @@
   "economic": "Economic",
   "science": "Science",
   "articles_not_found": "Articles not found",
-  "create_article": "Create article"
+  "create_article": "Create article",
+  "admin_panel": "Аdmin panel",
+  "access_denied": "Access denied"
 }

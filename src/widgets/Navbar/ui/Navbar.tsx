@@ -8,7 +8,7 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { useSelector, useDispatch } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import cls from './Navbar.module.scss';
 
@@ -20,6 +20,8 @@ const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
   const dispatch = useDispatch();
 
   const onCloseModal = useCallback(() => {
@@ -34,6 +36,8 @@ const Navbar = ({ className }: NavbarProps) => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
+  const isAdminPanelAvailable = isAdmin || isManager;
+
   const renderButton = () => {
     if (authData) {
       return (
@@ -41,6 +45,10 @@ const Navbar = ({ className }: NavbarProps) => {
           direction="bottom left"
           className={cls.dropdown}
           items={[
+            ...(isAdminPanelAvailable ? [{
+              content: t('admin_panel'),
+              href: RoutePath.admin_panel,
+            }] : []),
             {
               content: t('profile'),
               href: RoutePath.profile + authData?.id,
