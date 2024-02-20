@@ -1,4 +1,4 @@
-import { Country } from './model/types/country';
+import { Country } from './model/consts/country';
 import { CountrySelect } from './ui/CountrySelect/CountrySelect';
 
 export {

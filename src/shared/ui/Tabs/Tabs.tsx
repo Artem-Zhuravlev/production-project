@@ -23,7 +23,7 @@ export const Tabs = memo((props: TabsProps) => {
     onTabClick,
   } = props;
 
-  const handleClick = useCallback((TabItem) => {
+  const handleClick = useCallback((TabItem: TabItem) => {
     return () => {
       onTabClick(TabItem);
     };
