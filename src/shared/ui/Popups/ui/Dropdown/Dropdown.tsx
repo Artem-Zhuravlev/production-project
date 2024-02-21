@@ -1,6 +1,6 @@
 import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/ClassNames';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useId } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
 import { AppLink } from '../../../AppLink/AppLink';
 import cls from './Dropdown.module.scss';
@@ -26,6 +26,7 @@ export function Dropdown(props: DropdownProps) {
     className, trigger, items, direction = 'bottom right',
   } = props;
 
+  const id = useId();
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
@@ -34,7 +35,7 @@ export function Dropdown(props: DropdownProps) {
         {trigger}
       </Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: {active: boolean}) => (
             <button
               type="button"
@@ -48,14 +49,14 @@ export function Dropdown(props: DropdownProps) {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item key={`${id}-${index}`} as={AppLink} to={item.href} disabled={item.disabled}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item key={`${id}-${index}`} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );
