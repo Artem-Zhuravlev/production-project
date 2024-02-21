@@ -27,7 +27,6 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
       <ArticleList
         articles={articles}
         isLoading={isLoading}
-        virtualized={false}
       />
     </VStack>
   );
