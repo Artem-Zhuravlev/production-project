@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { Counter } from 'entities/Counter';
-import { ListBox } from 'shared/ui/Popups';
-import { Page } from 'widgets/Page/Page';
+import { Counter } from '@/entities/Counter';
+import { ListBox } from '@/shared/ui/Popups';
+import { Page } from '@/widgets/Page/Page';
 
 export const MainPage = () => {
   const { t } = useTranslation('home');
@@ -11,7 +11,7 @@ export const MainPage = () => {
       { t('home_page') }
       <Counter />
       <ListBox
-        defaultValue={'Choose value'}
+        defaultValue="Choose value"
         onChange={(value: string) => {}}
         value={undefined}
         items={[

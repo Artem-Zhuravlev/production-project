@@ -1,4 +1,4 @@
-import { Theme } from 'entities/User';
+import { Theme } from '@/entities/User';
 import ThemeProvider from './ui/ThemeProvider';
 import { useTheme } from './lib/useTheme';
 

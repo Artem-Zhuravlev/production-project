@@ -1,6 +1,6 @@
 import { ElementType, ReactNode, memo } from 'react';
-import { classNames } from 'shared/lib/classNames/ClassNames';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
 import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -12,7 +12,7 @@ const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
   center: cls.justifyCenter,
   end: cls.justifyEnd,
-  between: cls.justifyBetween
+  between: cls.justifyBetween,
 };
 
 const alignClasses: Record<FlexAlign, string> = {
@@ -24,7 +24,7 @@ const alignClasses: Record<FlexAlign, string> = {
 
 const directionClasses: Record<FlexDirection, string> = {
   row: cls.directionRow,
-  column: cls.directionColumn
+  column: cls.directionColumn,
 };
 
 const gapClasses: Record<FlexGap, string> = {
@@ -32,7 +32,7 @@ const gapClasses: Record<FlexGap, string> = {
   8: cls.gap8,
   16: cls.gap16,
   20: cls.gap20,
-  32: cls.gap32
+  32: cls.gap32,
 };
 
 export interface FlexProps {
@@ -53,7 +53,7 @@ export const Flex = memo((props: FlexProps) => {
     align = 'center',
     direction = 'row',
     gap = '',
-    children
+    children,
   } = props;
   const { t } = useTranslation();
 
@@ -62,7 +62,7 @@ export const Flex = memo((props: FlexProps) => {
     justifyClasses[justify],
     alignClasses[align],
     directionClasses[direction],
-    gap && gapClasses[gap]
+    gap && gapClasses[gap],
   ];
 
   return (

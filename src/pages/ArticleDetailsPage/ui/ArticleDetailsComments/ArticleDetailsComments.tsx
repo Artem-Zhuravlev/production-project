@@ -1,16 +1,16 @@
 import { memo, useCallback, Suspense } from 'react';
-import { classNames } from 'shared/lib/classNames/ClassNames';
 import { useTranslation } from 'react-i18next';
-import { AddCommentForm } from 'features/addCommentForm';
-import { CommentList } from 'entities/Comment';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Text, TextSize } from 'shared/ui/Text/Text';
 import { useDispatch, useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
+import { AddCommentForm } from '@/features/addCommentForm';
+import { CommentList } from '@/entities/Comment';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { Loader } from 'shared/ui/Loader';
+import { Loader } from '@/shared/ui/Loader';
 
 interface ArticleDetailsCommentsProps {
   className?: string;

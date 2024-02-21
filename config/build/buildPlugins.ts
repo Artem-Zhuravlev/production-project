@@ -32,16 +32,16 @@ export function buildPlugins({
     }),
     new CircularDependencyPlugin({
       exclude: /node_modules/,
-      failOnError: true
+      failOnError: true,
     }),
     new ForkIsCheckerWebpackPlugin({
       typescript: {
         diagnosticOptions: {
           semantic: true,
-          syntactic: true
-        }
-      }
-    })
+          syntactic: true,
+        },
+      },
+    }),
   ];
 
   if (isDev) {

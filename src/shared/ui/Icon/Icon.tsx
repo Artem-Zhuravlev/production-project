@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/ClassNames';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
 import cls from './Icon.module.scss';
 
 interface IconProps {
@@ -12,6 +12,6 @@ export const Icon = memo((props: IconProps) => {
   const { className, Svg, inverted } = props;
 
   return (
-    <Svg className={classNames(inverted ?  cls.inverted : cls.Icon, {}, [className])} />
+    <Svg className={classNames(inverted ? cls.inverted : cls.Icon, {}, [className])} />
   );
 });

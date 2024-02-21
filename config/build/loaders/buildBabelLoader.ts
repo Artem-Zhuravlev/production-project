@@ -25,15 +25,15 @@ export function buildBabelLoader({ isDev, isTsx }: buildBabelLoaderProps) {
           [
             '@babel/plugin-transform-typescript',
             {
-              isTsx
-            }
+              isTsx,
+            },
           ],
           '@babel/plugin-transform-runtime',
           isTsx && [
             babelRemovePropsPlugin(),
             {
-              props: ['data-testid']
-            }
+              props: ['data-testid'],
+            },
           ],
           isDev && require.resolve('react-refresh/babel'),
         ].filter(Boolean),

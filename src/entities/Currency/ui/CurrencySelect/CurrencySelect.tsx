@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/ClassNames';
 import { memo, useCallback } from 'react';
-import { ListBox } from 'shared/ui/Popups';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
+import { ListBox } from '@/shared/ui/Popups';
 import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
@@ -40,5 +40,5 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
       readonly={readonly}
       label={t('choose_currency')}
     />
-  )
+  );
 });

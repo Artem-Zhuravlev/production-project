@@ -1,10 +1,10 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/ClassNames';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
 import cls from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notification';
-import { Text } from 'shared/ui/Text/Text';
-import { Card, CardTheme } from 'shared/ui/Card/Card';
+import { Text } from '@/shared/ui/Text/Text';
+import { Card, CardTheme } from '@/shared/ui/Card/Card';
 
 interface NotificationItemProps {
   className?: string;
@@ -29,10 +29,10 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
 
   if (item.href) {
     return (
-      <a href={item.href} target={'__blank'} >
+      <a href={item.href} target="__blank">
         {content}
       </a>
-    )
+    );
   }
 
   return content;

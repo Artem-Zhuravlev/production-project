@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { Theme } from 'entities/User';
+import { Theme } from '@/entities/User';
 
 export interface ThemeContextProps {
   theme?: Theme;

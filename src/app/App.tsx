@@ -1,11 +1,11 @@
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
-
-import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
-import { classNames } from 'shared/lib/classNames/ClassNames';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserInited, userActions } from 'entities/User';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+
+import { useTheme } from '@/app/providers/ThemeProvider/lib/useTheme';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
+import { getUserInited, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
 
 const App = () => {

@@ -1,4 +1,4 @@
-import { classNames, Mods } from 'shared/lib/classNames/ClassNames';
+import { classNames, Mods } from '@/shared/lib/classNames/ClassNames';
 import cls from './Text.module.scss';
 
 export enum TextTheme {
@@ -34,7 +34,7 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
   [TextSize.S]: 'h3',
   [TextSize.M]: 'h2',
   [TextSize.L]: 'h1',
-}
+};
 
 export const Text = (props: TextProps) => {
   const {
@@ -44,7 +44,7 @@ export const Text = (props: TextProps) => {
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
     size = TextSize.M,
-    'data-testid': dataTestId = 'Text'
+    'data-testid': dataTestId = 'Text',
   } = props;
 
   const mods: Mods = {
@@ -58,7 +58,7 @@ export const Text = (props: TextProps) => {
   return (
     <div className={classNames(cls.Text, mods, [className])}>
       {title && (
-        <HeaderTag 
+        <HeaderTag
           className={cls.title}
           data-testid={`${dataTestId}.Header`}
         >

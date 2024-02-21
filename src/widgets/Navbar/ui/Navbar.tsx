@@ -1,17 +1,17 @@
 import { useState, useCallback } from 'react';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { classNames } from 'shared/lib/classNames/ClassNames';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { LoginModal } from 'features/AuthByUsername';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useSelector, useDispatch } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { LoginModal } from '@/features/AuthByUsername';
+import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { getUserAuthData } from '@/entities/User';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import cls from './Navbar.module.scss';
-import { HStack } from 'shared/ui/Stack';
-import { NotificationButton } from 'features/notificationButton';
-import { AvatarDropdown } from 'features/avatarDropdown';
+import { HStack } from '@/shared/ui/Stack';
+import { NotificationButton } from '@/features/notificationButton';
+import { AvatarDropdown } from '@/features/avatarDropdown';
 
 interface NavbarProps {
   className?: string
@@ -34,7 +34,7 @@ const Navbar = ({ className }: NavbarProps) => {
   const renderButton = () => {
     if (authData) {
       return (
-        <HStack gap={'16'} className={cls.actions}>
+        <HStack gap="16" className={cls.actions}>
           <NotificationButton />
           <AvatarDropdown />
         </HStack>

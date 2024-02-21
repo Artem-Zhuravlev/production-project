@@ -1,5 +1,5 @@
-import { classNames } from 'shared/lib/classNames/ClassNames';
-import { Modal } from 'shared/ui/Modal';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
+import { Modal } from '@/shared/ui/Modal';
 import cls from './LoginModal.module.scss';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 

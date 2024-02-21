@@ -1,20 +1,20 @@
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { CounterSchema } from 'entities/Counter';
-import { UserSchema } from 'entities/User';
-import { LoginSchema } from 'features/AuthByUsername';
 import {
   AnyAction, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
-import { ProfileSchema } from 'features/editableProfileCard';
 import { AxiosInstance } from 'axios';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { UISchema } from 'features/UI/model/types/UISchema';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ProfileSchema } from '@/features/editableProfileCard';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { UISchema } from '@/features/UI/model/types/UISchema';
 import {
   ArticleDetailsPageSchema,
-} from 'pages/ArticleDetailsPage';
-import { rtkApi } from 'shared/api/rtkApi';
+} from '@/pages/ArticleDetailsPage';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -28,7 +28,7 @@ export interface StateSchema {
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlesPageSchema;
   articleDetailsPage?: ArticleDetailsPageSchema;
-  
+
 }
 
 export type StateSchemaKey = keyof StateSchema;
