@@ -21,9 +21,6 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run lint:scss` - Проверка scss файлов style линтером
 - `npm run lint:scss:fix` - Исправление scss файлов style линтером
 - `npm run test:unit` - Хапуск unit тестов с jest
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
-- `npm run test:ui:ok` - Подтверждение новых скриншотов
-- `npm run test:ui:ci` - Запуск скриншотных тестов в CI
 - `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
 - `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
 - `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
@@ -58,7 +55,6 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 В проекте используются 4 вида тестов:
 1) Обычные unit тесты на jest - `npm run test:unit`
 2) Тесты на компоненты с React testing library -`npm run test:unit`
-3) Скриншотное тестирование с loki `npm run test:ui`
 4) e2e тестирование с Cypress `npm run test:e2e`
 
 Подробнее о тестах - [документация тестирование](/docs/tests.md)
@@ -127,8 +123,6 @@ Clear.args = {
     theme: ButtonTheme.CLEAR,
 };
 ```
-
-
 ----
 
 ## Конфигурация проекта
@@ -147,16 +141,6 @@ Clear.args = {
 
 В папке `scripts` находятся различные скрипты для рефакторинга\упрощения написания кода\генерации отчетов и тд.
 
-----
-
-## CI pipeline и pre commit хуки
-
-Конфигурация github actions находится в /.github/workflows.
-В ci прогоняются все виды тестов, сборка проекта и сторибука, линтинг.
-
-В прекоммит хуках проверяем проект линтерами, конфиг в /.husky
-
-----
 
 ### Работа с данными
 
