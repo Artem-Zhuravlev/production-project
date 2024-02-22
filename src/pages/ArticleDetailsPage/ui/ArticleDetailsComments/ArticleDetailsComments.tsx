@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/ClassNames';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';

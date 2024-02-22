@@ -10,8 +10,8 @@ import {
   ArticleType,
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Card } from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/ui/Input';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleTypeTabs } from '@/entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';

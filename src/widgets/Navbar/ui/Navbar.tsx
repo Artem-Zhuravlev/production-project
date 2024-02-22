@@ -1,13 +1,13 @@
 import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { classNames } from '@/shared/lib/classNames/ClassNames';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { LoginModal } from '@/features/AuthByUsername';
-import { Button, ThemeButton } from '@/shared/ui/Button/Button';
+import { Button, ThemeButton } from '@/shared/ui/Button';
 import { getUserAuthData } from '@/entities/User';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import cls from './Navbar.module.scss';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
