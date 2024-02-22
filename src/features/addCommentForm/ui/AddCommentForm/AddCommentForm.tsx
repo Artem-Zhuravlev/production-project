@@ -14,7 +14,6 @@ import {
   getAddCommentFormError,
   getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
-import { sendComment } from '../../model/services/sendComment/sendComment';
 import cls from './AddCommentForm.module.scss';
 
 interface AddCommentFormProps {

@@ -18,7 +18,7 @@ export const StarRating = memo((props: StarRatingProps) => {
     className,
     size = 30,
     selectedStars = 0,
-    onSelect
+    onSelect,
   } = props;
 
   const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
@@ -28,13 +28,13 @@ export const StarRating = memo((props: StarRatingProps) => {
     if (!isSelected) {
       setCurrentStarsCount(starsCount);
     }
-  }
+  };
 
   const onLeave = () => () => {
     if (!isSelected) {
       setCurrentStarsCount(0);
     }
-  }
+  };
 
   const onClick = (starsCount: number) => () => {
     if (!isSelected) {
@@ -42,7 +42,7 @@ export const StarRating = memo((props: StarRatingProps) => {
       setCurrentStarsCount(starsCount);
       setIsSelected(true);
     }
-  }
+  };
 
   return (
     <div className={classNames(cls.StarRating, {}, [className])}>
@@ -50,10 +50,11 @@ export const StarRating = memo((props: StarRatingProps) => {
         <Icon
           className={classNames(
             cls.StarIcon,
-            {[cls.isSelected]: isSelected },
-            [currentStarsCount >= starNumber ? cls.hovered : cls.normal]
+            { [cls.isSelected]: isSelected },
+            [currentStarsCount >= starNumber ? cls.hovered : cls.normal],
           )}
-          Svg={StarIcon} key={starNumber}
+          Svg={StarIcon}
+          key={starNumber}
           width={size}
           height={size}
           onMouseLeave={onLeave}

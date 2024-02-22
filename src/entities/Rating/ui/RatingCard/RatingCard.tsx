@@ -1,6 +1,7 @@
 import { memo, useCallback, useState } from 'react';
-import { classNames } from '@/shared/lib/classNames/ClassNames';
 import { useTranslation } from 'react-i18next';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { classNames } from '@/shared/lib/classNames/ClassNames';
 import cls from './RatingCard.module.scss';
 import { Card } from '@/shared/ui/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
@@ -9,7 +10,6 @@ import { StarRating } from '@/shared/ui/StarRating';
 import { Input } from '@/shared/ui/Input';
 import { Modal } from '@/shared/ui/Modal';
 import { Button, ThemeButton } from '@/shared/ui/Button';
-import { BrowserView, MobileView } from 'react-device-detect';
 import { Drawer } from '@/shared/ui/Drawer';
 
 interface RatingCardProps {
@@ -30,7 +30,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     hasFeedback,
     onCancel,
     onAccept,
-    rate = 0
+    rate = 0,
   } = props;
   const { t } = useTranslation();
   const [isOpenModal, setIsModalOpen] = useState(false);
@@ -57,14 +57,16 @@ export const RatingCard = memo((props: RatingCardProps) => {
   }, [onCancel, starsCount]);
 
   const modalContent = (
-    <VStack gap={'32'}>
+    <VStack gap="32">
       <Text title={feedbackTitle} />
       <Input placeholder={t('your_feedback')} />
-      <HStack gap={'16'} justify={'end'}>
+      <HStack gap="16" justify="end">
         <Button
           theme={ThemeButton.OUTLINE_RED}
           onClick={onCancelHandler}
-        >{t('close')}</Button>
+        >
+          {t('close')}
+        </Button>
         <Button onClick={onAcceptHandler}>{t('send')}</Button>
       </HStack>
     </VStack>
@@ -72,7 +74,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
   return (
     <Card className={classNames(cls.RatingCard, {}, [className])}>
-      <VStack align={'center'} gap={'8'}>
+      <VStack align="center" gap="8">
         <Text title={title} />
         <StarRating
           selectedStars={starsCount}

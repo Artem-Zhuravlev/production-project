@@ -6,7 +6,6 @@ import { classNames } from '@/shared/lib/classNames/ClassNames';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { HStack } from '@/shared/ui/Stack';
-import { getUserAuthData } from '@/entities/User';
 import { getArticleDetailsData } from '@/entities/Article';
 import { canEditArticle } from '../../model/selectors/article';
 

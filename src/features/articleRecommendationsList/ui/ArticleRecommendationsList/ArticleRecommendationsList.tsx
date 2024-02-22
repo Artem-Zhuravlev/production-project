@@ -4,7 +4,6 @@ import { classNames } from '@/shared/lib/classNames/ClassNames';
 import { TextSize, Text } from '@/shared/ui/Text';
 import { ArticleList } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
-import { rtkApi } from '@/shared/api/rtkApi';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {

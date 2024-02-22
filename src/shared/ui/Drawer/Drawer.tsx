@@ -106,11 +106,10 @@ const DrawerAsync = (props: DrawerProps) => {
   return <DrawerContent {...props} />;
 };
 
-
 export const Drawer = memo((props: DrawerProps) => {
   return (
     <AnimationProvider>
       <DrawerAsync {...props} />
     </AnimationProvider>
-  )
+  );
 });

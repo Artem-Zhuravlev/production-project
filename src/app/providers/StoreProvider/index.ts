@@ -10,5 +10,5 @@ export {
   createReduxStore,
   StateSchema,
   ThunkConfig,
-  ReduxStoreWithManager
+  ReduxStoreWithManager,
 };

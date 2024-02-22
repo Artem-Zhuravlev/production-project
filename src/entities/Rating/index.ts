@@ -1,2 +1,2 @@
-export { RatingCard } from "./ui/RatingCard/RatingCard";
-export type { Rating } from "./model/types/RatingTypes";
+export { RatingCard } from './ui/RatingCard/RatingCard';
+export type { Rating } from './model/types/RatingTypes';

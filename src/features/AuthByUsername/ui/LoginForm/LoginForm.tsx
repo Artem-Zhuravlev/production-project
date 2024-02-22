@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { useSelector, useStore } from 'react-redux';
-import { memo, useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/ClassNames';
 import { Button, ThemeButton, ButtonSize } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { ReduxStoreWithManager } from '@/app/providers/StoreProvider/config/StateSchema';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { getLoginUserName } from '@/entities/User/model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '@/entities/User/model/selectors/getLoginPassword/getLoginPassword';
