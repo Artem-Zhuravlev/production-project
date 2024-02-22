@@ -4,6 +4,7 @@ import { UserRole, Theme } from './model/consts/consts';
 import { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
 import { getUserInited } from './model/selectors/getUserInited/getUserInited';
 import { isUserAdmin, isUserManager } from './model/selectors/roleSelectors';
+import { getUserRoles } from './model/selectors/roleSelectors';
 
 export type {
   User,
@@ -11,6 +12,7 @@ export type {
 };
 
 export {
+  getUserRoles,
   userReducer,
   userActions,
   getUserAuthData,
