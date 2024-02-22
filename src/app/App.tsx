@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 
-import { useTheme } from '@/app/providers/ThemeProvider/lib/useTheme';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { classNames } from '@/shared/lib/classNames/ClassNames';
 import { getUserInited, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
