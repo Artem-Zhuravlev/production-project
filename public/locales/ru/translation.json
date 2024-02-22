@@ -37,5 +37,6 @@
   "articles_not_found": "Статьи не найдены",
   "create_article": "Создать статью",
   "admin_panel": "Админ панель",
-  "access_denied": "Доступ закрыт"
+  "access_denied": "Доступ закрыт",
+  "your_feedback": "Ваш отзыв"
 }
