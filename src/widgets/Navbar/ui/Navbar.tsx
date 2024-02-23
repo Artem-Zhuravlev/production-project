@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { classNames } from '@/shared/lib/classNames/ClassNames';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { LoginModal } from '@/features/AuthByUsername';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { getUserAuthData } from '@/entities/User';
@@ -12,6 +11,7 @@ import cls from './Navbar.module.scss';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
+import { getRouteAbout, getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string
@@ -63,15 +63,15 @@ const Navbar = ({ className }: NavbarProps) => {
           />
         </li>
         <li>
-          <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>{ t('home') }</AppLink>
+          <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteMain()}>{ t('home') }</AppLink>
         </li>
         <li>
-          <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>{ t('about') }</AppLink>
+          <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteAbout()}>{ t('about') }</AppLink>
         </li>
         <li>
           <AppLink
             theme={AppLinkTheme.SECONDARY}
-            to={RoutePath.article_create}
+            to={getRouteArticleCreate()}
           >
             { t('create_article') }
           </AppLink>
