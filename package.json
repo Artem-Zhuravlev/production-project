@@ -20,7 +20,7 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
-    "prepare": "husky install",
+    "prepare": "husky",
     "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "lint-staged": {
@@ -79,7 +79,7 @@
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^7.0.4",
+    "husky": "^9.0.11",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-html-reporters": "^3.0.10",
