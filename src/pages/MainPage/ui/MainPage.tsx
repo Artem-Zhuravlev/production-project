@@ -7,7 +7,7 @@ export const MainPage = () => {
   const { t } = useTranslation('home');
 
   return (
-    <Page>
+    <Page data-testid="MainPage">
       { t('home_page') }
       <Counter />
       <ListBox
