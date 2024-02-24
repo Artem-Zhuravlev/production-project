@@ -3,7 +3,10 @@ import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/ClassNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '@/widgets/Page/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
@@ -14,7 +17,7 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
-    className?: string;
+  className?: string;
 }
 
 const reducers: ReducersList = {
@@ -31,7 +34,10 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader
+      reducers={reducers}
+      removeAfterUnmount
+    >
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <VStack gap="16">
           <ArticleDetailsPageHeader />

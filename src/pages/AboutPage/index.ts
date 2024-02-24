@@ -1,5 +1,3 @@
 import { AboutPage } from './ui/AboutPage';
 
-export {
-  AboutPage,
-};
+export { AboutPage };

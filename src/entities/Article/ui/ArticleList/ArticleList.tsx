@@ -10,16 +10,19 @@ import { Article } from '../../model/types/article';
 
 interface ArticleListProps {
   className?: string;
-  articles: Article[]
+  articles: Article[];
   isLoading?: boolean;
   target?: HTMLAttributeAnchorTarget;
   view?: ArticleView;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
-  .fill(0)
-  .map((item, index) => (
-    <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+const getSkeletons = (view: ArticleView) =>
+  new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((item, index) => (
+    <ArticleListItemSkeleton
+      className={cls.card}
+      key={index}
+      view={view}
+    />
   ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -35,15 +38,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
   if (!isLoading && !articles.length) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-        <Text size={TextSize.L} title={t('articles_not_found')} />
+        <Text
+          size={TextSize.L}
+          title={t('articles_not_found')}
+        />
       </div>
     );
   }
 
   return (
-    <div
-      className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-    >
+    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.map((item) => (
         <ArticleListItem
           article={item}

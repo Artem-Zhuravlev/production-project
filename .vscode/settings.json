@@ -1,5 +1,7 @@
 {
   "cSpell.words": [
     "localstorage"
-  ]
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }

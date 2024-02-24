@@ -9,11 +9,12 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
 import cls from './ArticleListItem.module.scss';
-import {
-  Article, ArticleTextBlock,
-} from '../../model/types/article';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { ArticleBlockType, ArticleView } from '../../model/consts/articleContsts';
+import {
+  ArticleBlockType,
+  ArticleView,
+} from '../../model/consts/articleContsts';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -26,15 +27,21 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const {
-    className, article, view, target,
-  } = props;
+  const { className, article, view, target } = props;
   const { t } = useTranslation();
 
-  const types = <Text text={article.type.join(', ')} className={cls.types} />;
+  const types = (
+    <Text
+      text={article.type.join(', ')}
+      className={cls.types}
+    />
+  );
   const views = (
     <>
-      <Text text={String(article.views)} className={cls.views} />
+      <Text
+        text={String(article.views)}
+        className={cls.views}
+      />
       <Icon Svg={EyeIcon} />
     </>
   );
@@ -45,32 +52,52 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     ) as ArticleTextBlock;
 
     return (
-      <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+      <div
+        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+      >
         <Card className={cls.card}>
           <div className={cls.header}>
-            <Avatar size={30} src={article.user.avatar} />
-            <Text text={article.user.username} className={cls.username} />
-            <Text text={article.createdAt} className={cls.date} />
+            <Avatar
+              size={30}
+              src={article.user.avatar}
+            />
+            <Text
+              text={article.user.username}
+              className={cls.username}
+            />
+            <Text
+              text={article.createdAt}
+              className={cls.date}
+            />
           </div>
-          <Text title={article.title} className={cls.title} />
+          <Text
+            title={article.title}
+            className={cls.title}
+          />
           {types}
           <AppImage
             src={article.img}
             className={cls.img}
             alt={article.title}
-            fallback={<Skeleton height={250} width="100%" />}
+            fallback={
+              <Skeleton
+                height={250}
+                width="100%"
+              />
+            }
           />
           {textBlock && (
-            <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+            <ArticleTextBlockComponent
+              block={textBlock}
+              className={cls.textBlock}
+            />
           )}
           <div className={cls.footer}>
             <AppLink
               target={target}
               to={getRouteArticleDetails(article.id)}
             >
-              <Button theme={ThemeButton.OUTLINE}>
-                {t('read_more')}
-              </Button>
+              <Button theme={ThemeButton.OUTLINE}>{t('read_more')}</Button>
             </AppLink>
             {views}
           </div>
@@ -91,15 +118,26 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             alt={article.title}
             src={article.img}
             className={cls.img}
-            fallback={<Skeleton width={200} height={200} />}
+            fallback={
+              <Skeleton
+                width={200}
+                height={200}
+              />
+            }
           />
-          <Text text={article.createdAt} className={cls.date} />
+          <Text
+            text={article.createdAt}
+            className={cls.date}
+          />
         </div>
         <div className={cls.infoWrapper}>
           {types}
           {views}
         </div>
-        <Text text={article.title} className={cls.title} />
+        <Text
+          text={article.title}
+          className={cls.title}
+        />
       </Card>
     </AppLink>
   );

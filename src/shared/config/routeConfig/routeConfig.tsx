@@ -13,7 +13,7 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean;
   roles?: UserRole[];
-}
+};
 
 export enum AppRoutes {
   MAIN = 'main',

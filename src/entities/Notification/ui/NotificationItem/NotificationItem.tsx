@@ -29,7 +29,10 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
 
   if (item.href) {
     return (
-      <a href={item.href} target="__blank">
+      <a
+        href={item.href}
+        target="__blank"
+      >
         {content}
       </a>
     );

@@ -3,7 +3,7 @@ import { ArticleBlockType, ArticleType } from '../consts/articleContsts';
 
 export interface ArticleBlockBase {
   id: string;
-  type: ArticleBlockType
+  type: ArticleBlockType;
 }
 
 export interface ArticleCodeBlock extends ArticleBlockBase {
@@ -23,7 +23,10 @@ export interface ArticleTextBlock extends ArticleBlockBase {
   paragraphs: string[];
 }
 
-export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
+export type ArticleBlock =
+  | ArticleCodeBlock
+  | ArticleImageBlock
+  | ArticleTextBlock;
 export interface Article {
   id: string;
   title: string;
@@ -33,6 +36,6 @@ export interface Article {
   views: number;
   createdAt: string;
   type: ArticleType[];
-  blocks: ArticleBlock[],
+  blocks: ArticleBlock[];
 }
 export { ArticleType };

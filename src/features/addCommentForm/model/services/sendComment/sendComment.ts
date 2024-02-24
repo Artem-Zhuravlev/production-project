@@ -6,45 +6,36 @@ import { getArticleDetailsData } from '@/entities/Article/model/selectors/articl
 import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors';
 import { addCommentFormActions } from '../../slice/addCommentFormSlice';
 
-export const sendComment = createAsyncThunk<
-  Comment,
-  void,
-  ThunkConfig<string>
-  >(
-    'addCommentForm/sendComment',
-    async (articleId, thunkApi) => {
-      const {
-        extra,
-        dispatch,
-        rejectWithValue,
-        getState,
-      } = thunkApi;
+export const sendComment = createAsyncThunk<Comment, void, ThunkConfig<string>>(
+  'addCommentForm/sendComment',
+  async (articleId, thunkApi) => {
+    const { extra, dispatch, rejectWithValue, getState } = thunkApi;
 
-      const userData = getUserAuthData(getState());
-      const text = getAddCommentFormText(getState());
-      const article = getArticleDetailsData(getState());
+    const userData = getUserAuthData(getState());
+    const text = getAddCommentFormText(getState());
+    const article = getArticleDetailsData(getState());
 
-      if (!userData || !text || !article) {
-        return rejectWithValue('error');
+    if (!userData || !text || !article) {
+      return rejectWithValue('error');
+    }
+
+    try {
+      const response = await extra.api.post<Comment>('/comments', {
+        articleId: article.id,
+        userId: userData.id,
+        text,
+      });
+
+      if (!response.data) {
+        throw new Error();
       }
 
-      try {
-        const response = await extra.api.post<Comment>('/comments', {
-          articleId: article.id,
-          userId: userData.id,
-          text,
-        });
+      dispatch(addCommentFormActions.setText(''));
 
-        if (!response.data) {
-          throw new Error();
-        }
-
-        dispatch(addCommentFormActions.setText(''));
-
-        return response.data;
-      } catch (e) {
-        console.log(e);
-        return rejectWithValue('error');
-      }
-    },
-  );
+      return response.data;
+    } catch (e) {
+      console.log(e);
+      return rejectWithValue('error');
+    }
+  },
+);

@@ -8,7 +8,7 @@ export const MainPage = () => {
 
   return (
     <Page data-testid="MainPage">
-      { t('home_page') }
+      {t('home_page')}
       <Counter />
       <ListBox
         defaultValue="Choose value"

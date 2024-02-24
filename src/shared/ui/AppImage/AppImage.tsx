@@ -1,5 +1,9 @@
 import {
-  ImgHTMLAttributes, ReactElement, memo, useLayoutEffect, useState,
+  ImgHTMLAttributes,
+  ReactElement,
+  memo,
+  useLayoutEffect,
+  useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 

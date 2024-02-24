@@ -37,14 +37,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
-  const onSelectStars = useCallback((selectedStarsCount: number) => {
-    setStarsCount(selectedStarsCount);
-    if (hasFeedback) {
-      setIsModalOpen(true);
-    } else {
-      onAccept?.(selectedStarsCount);
-    }
-  }, [hasFeedback, onAccept]);
+  const onSelectStars = useCallback(
+    (selectedStarsCount: number) => {
+      setStarsCount(selectedStarsCount);
+      if (hasFeedback) {
+        setIsModalOpen(true);
+      } else {
+        onAccept?.(selectedStarsCount);
+      }
+    },
+    [hasFeedback, onAccept],
+  );
 
   const onAcceptHandler = useCallback(() => {
     setIsModalOpen(false);
@@ -60,7 +63,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
     <VStack gap="32">
       <Text title={feedbackTitle} />
       <Input placeholder={t('your_feedback')} />
-      <HStack gap="16" justify="end">
+      <HStack
+        gap="16"
+        justify="end"
+      >
         <Button
           theme={ThemeButton.OUTLINE_RED}
           onClick={onCancelHandler}
@@ -74,7 +80,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
   return (
     <Card className={classNames(cls.RatingCard, {}, [className])}>
-      <VStack align="center" gap="8">
+      <VStack
+        align="center"
+        gap="8"
+      >
         <Text title={title} />
         <StarRating
           selectedStars={starsCount}
@@ -82,12 +91,19 @@ export const RatingCard = memo((props: RatingCardProps) => {
           onSelect={onSelectStars}
         />
         <BrowserView>
-          <Modal isOpen={isOpenModal} lazy>
+          <Modal
+            isOpen={isOpenModal}
+            lazy
+          >
             {modalContent}
           </Modal>
         </BrowserView>
         <MobileView>
-          <Drawer isOpen={isOpenModal} lazy onClose={onCancelHandler}>
+          <Drawer
+            isOpen={isOpenModal}
+            lazy
+            onClose={onCancelHandler}
+          >
             {modalContent}
           </Drawer>
         </MobileView>

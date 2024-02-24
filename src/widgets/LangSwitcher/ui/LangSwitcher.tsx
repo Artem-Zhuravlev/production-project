@@ -20,7 +20,7 @@ export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
       className={classNames('', {}, [className])}
       onClick={toggleLanguage}
     >
-      { t(short ? 'short_language' : 'language') }
+      {t(short ? 'short_language' : 'language')}
     </Button>
   );
 });

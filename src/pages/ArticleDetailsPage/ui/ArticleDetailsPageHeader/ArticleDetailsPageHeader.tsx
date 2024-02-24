@@ -10,41 +10,46 @@ import { canEditArticle } from '../../model/selectors/article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
-  className?: string
+  className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
-  const { className } = props;
-  const { t } = useTranslation('article');
-  const navigate = useNavigate();
-  const canEdit = useSelector(canEditArticle);
-  const article = useSelector(getArticleDetailsData);
+export const ArticleDetailsPageHeader = memo(
+  (props: ArticleDetailsPageHeaderProps) => {
+    const { className } = props;
+    const { t } = useTranslation('article');
+    const navigate = useNavigate();
+    const canEdit = useSelector(canEditArticle);
+    const article = useSelector(getArticleDetailsData);
 
-  const onBackToLIst = useCallback(() => {
-    navigate(getRouteArticles());
-  }, [navigate]);
+    const onBackToLIst = useCallback(() => {
+      navigate(getRouteArticles());
+    }, [navigate]);
 
-  const onEditArticle = useCallback(() => {
-    navigate(getRouteArticleEdit(article?.id));
-  }, [article?.id, navigate]);
+    const onEditArticle = useCallback(() => {
+      navigate(getRouteArticleEdit(article?.id));
+    }, [article?.id, navigate]);
 
-  return (
-    <HStack
-      gap="8"
-      justify="between"
-      className={classNames('', {}, [className])}
-    >
-      <Button theme={ThemeButton.OUTLINE} onClick={onBackToLIst}>
-        {t('back_to_list')}
-      </Button>
-      {canEdit && (
+    return (
+      <HStack
+        gap="8"
+        justify="between"
+        className={classNames('', {}, [className])}
+      >
         <Button
           theme={ThemeButton.OUTLINE}
-          onClick={onEditArticle}
+          onClick={onBackToLIst}
         >
-          {t('edit')}
+          {t('back_to_list')}
         </Button>
-      )}
-    </HStack>
-  );
-});
+        {canEdit && (
+          <Button
+            theme={ThemeButton.OUTLINE}
+            onClick={onEditArticle}
+          >
+            {t('edit')}
+          </Button>
+        )}
+      </HStack>
+    );
+  },
+);

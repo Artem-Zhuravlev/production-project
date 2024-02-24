@@ -11,10 +11,14 @@ import cls from './Navbar.module.scss';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
-import { getRouteAbout, getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
+import {
+  getRouteAbout,
+  getRouteArticleCreate,
+  getRouteMain,
+} from '@/shared/const/router';
 
 interface NavbarProps {
-  className?: string
+  className?: string;
 }
 
 const Navbar = ({ className }: NavbarProps) => {
@@ -34,7 +38,10 @@ const Navbar = ({ className }: NavbarProps) => {
   const renderButton = () => {
     if (authData) {
       return (
-        <HStack gap="16" className={cls.actions}>
+        <HStack
+          gap="16"
+          className={cls.actions}
+        >
           <NotificationButton />
           <AvatarDropdown />
         </HStack>
@@ -47,7 +54,7 @@ const Navbar = ({ className }: NavbarProps) => {
         className={cls.links}
         onClick={onShowModal}
       >
-        { t('enter') }
+        {t('enter')}
       </Button>
     );
   };
@@ -63,24 +70,30 @@ const Navbar = ({ className }: NavbarProps) => {
           />
         </li>
         <li>
-          <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteMain()}>{ t('home') }</AppLink>
+          <AppLink
+            theme={AppLinkTheme.SECONDARY}
+            to={getRouteMain()}
+          >
+            {t('home')}
+          </AppLink>
         </li>
         <li>
-          <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteAbout()}>{ t('about') }</AppLink>
+          <AppLink
+            theme={AppLinkTheme.SECONDARY}
+            to={getRouteAbout()}
+          >
+            {t('about')}
+          </AppLink>
         </li>
         <li>
           <AppLink
             theme={AppLinkTheme.SECONDARY}
             to={getRouteArticleCreate()}
           >
-            { t('create_article') }
+            {t('create_article')}
           </AppLink>
         </li>
-        <li
-          className={cls['ml-auto']}
-        >
-          {renderButton()}
-        </li>
+        <li className={cls['ml-auto']}>{renderButton()}</li>
       </ul>
       <LoginModal
         isOpen={isAuthModal}
