@@ -33,7 +33,7 @@ export const ArticleRating = memo((props: ArticleRatingProps) => {
     } catch (e) {
       console.log(e);
     }
-  }, [articleId]);
+  }, [articleId, rateArticleMutation, userData?.id]);
 
   const onAccept = useCallback((starsCount: number, feedback?: string) => {
     handleRateArticle(starsCount, feedback);
