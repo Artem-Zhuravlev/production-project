@@ -21,7 +21,7 @@ export const userSlice = createSlice({
       if (user) {
         const json = JSON.parse(user) as User;
         state.authData = json;
-        setFeatureFlags(json.features);
+        setFeatureFlags(json?.features);
       }
       state._inited = true;
     },
