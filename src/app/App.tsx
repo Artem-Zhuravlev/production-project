@@ -1,20 +1,21 @@
 import { Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { classNames } from '@/shared/lib/classNames/ClassNames';
-import { getUserInited, userActions } from '@/entities/User';
+import { getUserInited, initAuthData } from '@/entities/User';
 import { AppRouter } from './providers/router';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 const App = () => {
   const { theme } = useTheme();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
 
   useEffect(() => {
-    dispatch(userActions.initAuthData());
+    dispatch(initAuthData());
   }, [dispatch]);
 
   return (

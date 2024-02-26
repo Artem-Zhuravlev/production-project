@@ -613,7 +613,10 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
       },
-      "avatar": "https://avatars.githubusercontent.com/u/24191610?v=4"
+      "avatar": "https://avatars.githubusercontent.com/u/24191610?v=4",
+      "jsonSettings": {
+        "theme": "app_orange_theme"
+      }
     },
     {
       "id": "2",
