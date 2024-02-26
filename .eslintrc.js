@@ -8,7 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
-    'prettier'
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,13 +24,13 @@ module.exports = {
     'i18next',
     'react-hooks',
     'ulbi-tv-plugin',
-    'unused-imports'
+    'unused-imports',
   ],
   rules: {
     'unused-imports/no-unused-imports': 'error',
     'react/jsx-filename-extension': [
-        2,
-        { extensions: ['.js', '.jsx', '.tsx'] },
+      2,
+      { extensions: ['.js', '.jsx', '.tsx'] },
     ],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -47,7 +47,21 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'target', 'align', 'border', 'direction', 'as', 'role', 'justify', 'gap', 'tag', 'defaultValue'],
+        ignoreAttribute: [
+          'data-testid',
+          'to',
+          'target',
+          'align',
+          'border',
+          'direction',
+          'as',
+          'role',
+          'justify',
+          'gap',
+          'tag',
+          'defaultValue',
+          'feature',
+        ],
       },
     ],
     'max-len': ['error', { ignoreComments: true, code: 125 }],
@@ -61,7 +75,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'ulbi-tv-plugin/path-checker': 'error',
     'no-console': 'off',
-    'react/jsx-props-no-spreading': 'off'
+    'react/jsx-props-no-spreading': 'off',
   },
   globals: {
     __IS_DEV__: true,

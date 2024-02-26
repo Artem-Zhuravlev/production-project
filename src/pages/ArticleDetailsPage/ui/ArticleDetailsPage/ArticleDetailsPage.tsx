@@ -14,9 +14,9 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ToggleFeatures } from '@/shared/lib/featuers';
+import { Card } from '@/shared/ui/Card';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag } from '@/shared/lib/featuers';
-import { Counter } from '@/entities/Counter';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -28,10 +28,8 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
-  const { t } = useTranslation('article-details');
+  const { t } = useTranslation('article');
   const { id } = useParams<{ id: string }>();
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-  const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
   if (!id) {
     return null;
@@ -46,8 +44,11 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <VStack gap="16">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {isCounterEnabled && <Counter />}
-          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+          <ToggleFeatures
+            feature="isArticleRatingEnabled"
+            on={<ArticleRating articleId={id} />}
+            off={<Card>{t('article_rating_feature')}</Card>}
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

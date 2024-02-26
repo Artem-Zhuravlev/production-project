@@ -38,5 +38,7 @@
   "create_article": "Create article",
   "admin_panel": "Аdmin panel",
   "access_denied": "Access denied",
-  "your_feedback": "Your Feedback"
+  "your_feedback": "Your Feedback",
+  "welcome_to_articles_page": "Welcome to articles page",
+  "articles_with_different_topics": "Articles with different topics"
 }

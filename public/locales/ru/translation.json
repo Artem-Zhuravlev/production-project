@@ -38,5 +38,7 @@
   "create_article": "Создать статью",
   "admin_panel": "Админ панель",
   "access_denied": "Доступ закрыт",
-  "your_feedback": "Ваш отзыв"
+  "your_feedback": "Ваш отзыв",
+  "welcome_to_articles_page": "Добро пожаловать на страницу статей",
+  "articles_with_different_topics": "Статьи на различные темы"
 }

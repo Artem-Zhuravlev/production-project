@@ -615,7 +615,8 @@
       },
       "avatar": "https://avatars.githubusercontent.com/u/24191610?v=4",
       "jsonSettings": {
-        "theme": "app_orange_theme"
+        "theme": "app_orange_theme",
+        "isArticlesPageWasOpened": true
       }
     },
     {
